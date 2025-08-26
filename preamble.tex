@@ -7,6 +7,7 @@
 \usepackage{bookmark}
 \usepackage{enumitem}
 \usepackage{hyperref,theoremref}
+\usepackage[french]{babel}
 \hypersetup{
 	pdftitle={assignment},
 	colorlinks=true, linkcolor=doc!90,
@@ -31,13 +32,6 @@
 \usepackage{tikz}
 \usepackage{titletoc}
 
-\newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
-\SetCommentSty{mycommfont}
-\newcommand{\incfig}[1]{%
-    \def\svgwidth{\columnwidth}
-    \import{./figures/}{#1.pdf_tex}
-}
-
 \usepackage{tikzsymbols}
 \tikzset{
 	symbol/.style={
@@ -56,18 +50,6 @@
         inner sep=0pt
     }
 }
-
-\renewcommand\qedsymbol{$\Laughey$}
-
-% \usepackage{xparse}
-% \usepackage{pgffor}
-% \usepackage{emoji}
-%
-% \NewDocumentCommand{\memoji}{m o}{%
-%   \IfNoValueTF{#2}
-%     {\ifmmode \text{\emoji{#1}} \else \emoji{#1}\fi} % Single emoji case
-%     {\foreach \index in {1,...,#2}{\ifmmode \text{\emoji{#1}} \else \emoji{#1}\fi}} % Repeated emoji case
-% }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SELF MADE COLORS
@@ -106,7 +88,7 @@
 %================================
 
 \tcbuselibrary{theorems,skins,hooks}
-\newtcbtheorem[number within=section]{Theorem}{Theorem}
+\newtcbtheorem[number within=section]{Theorem}{Théorème}
 {%
 	enhanced,
 	breakable,
@@ -126,7 +108,7 @@
 {th}
 
 \tcbuselibrary{theorems,skins,hooks}
-\newtcbtheorem[number within=chapter]{theorem}{Theorem}
+\newtcbtheorem[number within=chapter]{theorem}{Théorème}
 {%
 	enhanced,
 	breakable,
@@ -164,7 +146,7 @@
 % Corollery
 %================================
 \tcbuselibrary{theorems,skins,hooks}
-\newtcbtheorem[number within=section]{Corollary}{Corollary}
+\newtcbtheorem[number within=section]{Corollary}{Corollaire}
 {%
 	enhanced
 	,breakable
@@ -183,7 +165,7 @@
 }
 {th}
 \tcbuselibrary{theorems,skins,hooks}
-\newtcbtheorem[number within=chapter]{corollary}{Corollary}
+\newtcbtheorem[number within=chapter]{corollary}{Corollaire}
 {%
 	enhanced
 	,breakable
@@ -208,7 +190,7 @@
 %================================
 
 \tcbuselibrary{theorems,skins,hooks}
-\newtcbtheorem[number within=section]{Lemma}{Lemma}
+\newtcbtheorem[number within=section]{Lemma}{Lemme}
 {%
 	enhanced,
 	breakable,
@@ -228,7 +210,7 @@
 {th}
 
 \tcbuselibrary{theorems,skins,hooks}
-\newtcbtheorem[number within=chapter]{lemma}{lemma}
+\newtcbtheorem[number within=chapter]{lemma}{Lemme}
 {%
 	enhanced,
 	breakable,
@@ -252,7 +234,7 @@
 %================================
 
 \tcbuselibrary{theorems,skins,hooks}
-\newtcbtheorem[number within=section]{Exercise}{Exercise}
+\newtcbtheorem[number within=section]{Exercise}{Exercice}
 {%
 	enhanced,
 	breakable,
@@ -272,7 +254,7 @@
 {th}
 
 \tcbuselibrary{theorems,skins,hooks}
-\newtcbtheorem[number within=chapter]{exercise}{Exercise}
+\newtcbtheorem[number within=chapter]{exercise}{Exercice}
 {%
 	enhanced,
 	breakable,
@@ -342,7 +324,7 @@
 %================================
 
 \tcbuselibrary{theorems,skins,hooks}
-\newtcbtheorem[number within=section]{claim}{Claim}
+\newtcbtheorem[number within=section]{claim}{Affirmation}
 {%
 	enhanced
 	,breakable
@@ -367,7 +349,7 @@
 % EXAMPLE BOX
 %================================
 
-\newtcbtheorem[number within=section]{Example}{Example}
+\newtcbtheorem[number within=section]{Example}{Exemple}
 {%
 	colback = myexamplebg
 	,breakable
@@ -384,7 +366,7 @@
 }
 {ex}
 
-\newtcbtheorem[number within=chapter]{example}{Example}
+\newtcbtheorem[number within=chapter]{example}{Exemple}
 {%
 	colback = myexamplebg
 	,breakable
@@ -405,7 +387,7 @@
 % DEFINITION BOX
 %================================
 
-\newtcbtheorem[number within=section]{Definition}{Definition}{enhanced,
+\newtcbtheorem[number within=section]{Definition}{Définition}{enhanced,
 	before skip=2mm,after skip=2mm, colback=red!5,colframe=red!80!black,boxrule=0.5mm,
 	attach boxed title to top left={xshift=1cm,yshift*=1mm-\tcboxedtitleheight}, varwidth boxed title*=-3cm,
 	boxed title style={frame code={
@@ -425,7 +407,7 @@
 		},
 	fonttitle=\bfseries,
 	title={#2},#1}{def}
-\newtcbtheorem[number within=chapter]{definition}{Definition}{enhanced,
+\newtcbtheorem[number within=chapter]{definition}{Définition}{enhanced,
 	before skip=2mm,after skip=2mm, colback=red!5,colframe=red!80!black,boxrule=0.5mm,
 	attach boxed title to top left={xshift=1cm,yshift*=1mm-\tcboxedtitleheight}, varwidth boxed title*=-3cm,
 	boxed title style={frame code={
@@ -539,7 +521,7 @@
 }{def}
 \makeatother
 
-\newtcbtheorem[number within=chapter]{wconc}{Wrong Concept}{
+\newtcbtheorem[number within=chapter]{wconc}{Fausse Idée}{
 	breakable,
 	enhanced,
 	colback=white,
@@ -709,7 +691,7 @@
 {\addvspace{30pt}%
 	\begin{tikzpicture}[remember picture, overlay]%
 		\draw[fill=doc!60,draw=doc!60] (-7,-.1) rectangle (-0.9,.5);%
-		\pgftext[left,x=-3.7cm,y=0.2cm]{\color{white}\Large\sc\bfseries Chapter\ \thecontentslabel};%
+		\pgftext[left,x=-3.7cm,y=0.17cm]{\color{white}\Large\sc\bfseries Chapitre\ \thecontentslabel};%
 	\end{tikzpicture}\color{doc!60}\large\sc\bfseries}%
 {}
 {}
