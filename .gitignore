@@ -2,3 +2,6 @@
 *.aux
 *.fdb_latexmk
 *.fls
+/node_modules
+/.vscode
+Fichiers .tex/test.pdf
